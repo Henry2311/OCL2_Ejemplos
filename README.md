@@ -1,57 +1,25 @@
-# Product Name
-> Short blurb about what your product does.
+# OLC2 Ejemplos 1S2024
+> Laboratorio de Organizacion de Lenguajes y Compiladores 2, Facultad de Ingeniería Universidad de San Carlos de Guatemala
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
-One to two paragraph statement about your product and what it does.
+Repositorio de ejemplos desarrollados durante el Labortario de Compiladores 2, en lo general se utiliza la herramienta PLY de python que permite construir analizadores léxicos y sintácticos de forma rápida e intuitiva. Se debe tener instalado Python 3.6 o superior
 
 ![](header.png)
 
-## Installation
+## Instalación
 
-OS X & Linux:
-
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
+PLY:
 
 ```sh
-edit autoexec.bat
+pip install PLY
 ```
 
-## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+## Tabla de Contenidos
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Release History
-
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
+| Clase | Tema Visto         | Acceso Directo                                                               |
+|-------|--------------------|------------------------------------------------------------------------------|
+| 29/01 | Introduccion a PLY | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_2) |
 
 ## Meta
 
@@ -61,18 +29,9 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 [https://github.com/yourname/github-link](https://github.com/dbader/)
 
-## Contributing
+## Documentación
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+1. [Documentacion PLY](https://ply.readthedocs.io/en/latest/)
+2. [Página Ing. Erick Navarro](https://ericknavarro.io/2020/02/10/24-Mi-primer-proyecto-utilizando-PLY/)
+3. [Repositorio de guía](https://gitlab.com/Henry2311/olc2vj22_202004810)
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
