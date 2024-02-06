@@ -10,10 +10,9 @@ Repositorio de ejemplos desarrollados durante el Labortario de Compiladores 2, e
 
 PLY:
 
-```sh
+```python
 pip install PLY
 ```
-
 
 ## Tabla de Contenidos
 
@@ -21,14 +20,6 @@ pip install PLY
 |-------|--------------------|------------------------------------------------------------------------------|
 | 29/01 | Introduccion a PLY | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_2) |
 | 05/02 | Construccion AST | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_3) |
-
-## Meta
-
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
 
 ## Documentación
 
