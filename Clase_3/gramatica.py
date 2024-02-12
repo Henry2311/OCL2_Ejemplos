@@ -1,3 +1,4 @@
+
 # Lista de tokens
 tokens = (
     'CONSOLE',
@@ -65,22 +66,22 @@ def t_error(t):
 precedence = (
     ('left','MAS','MENOS'),
     ('left','POR','DIVIDIDO'),
-    ('right','UMENOS'),
     )
+
 
 from expresiones import *
 from instrucciones import *
 
-def p_init(t):
-    'init               : instrucciones'
+def p_init(t) :
+    'init            : instrucciones'
     t[0] = t[1]
 
 def p_instrucciones_lista(t):
-    '''instrucciones    : instruccion instrucciones '''
+    '''instrucciones    : instrucciones instruccion'''
     t[1].append(t[2])
     t[0] = t[1]
 
-def p_instrucciones_instruccion(t):
+def p_instrucciones_instruccion(t) :
     'instrucciones    : instruccion '
     t[0] = [t[1]]
 
@@ -102,9 +103,6 @@ def p_expresion_binaria(t):
     elif t[2] == '*': t[0] = ExpresionBinaria(t[1], t[3], OPERACION_ARITMETICA.POR)
     elif t[2] == '/': t[0] = ExpresionBinaria(t[1], t[3], OPERACION_ARITMETICA.DIVIDIDO)
 
-def p_expresion_unaria(t):
-    'expresion : MENOS expresion %prec UMENOS'
-    t[0] = -t[2]
 
 def p_expresion_agrupacion(t):
     'expresion : PARIZQ expresion PARDER'
@@ -124,11 +122,10 @@ def p_error(p):
     else:
         print("Error de sintaxis")
 
-
 import ply.lex as Lex
 import ply.yacc as yacc
 lexer = Lex.lex()
 parser = yacc.yacc()
 
-def parse(input):
+def parse(input) :
     return parser.parse(input)

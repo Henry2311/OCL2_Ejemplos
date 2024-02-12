@@ -4,14 +4,13 @@ from instrucciones import *
 
 
 def procesar_imprimir(instr):
-    print('>> ', resolver_expresion(instr))
+    print('>> ', resolver_expresion(instr.cad))
 
 
 def resolver_expresion(expCad) :
     if isinstance(expCad, ExpresionBinaria) :
-        exp1 = resolver_expresion_aritmetica(expCad.exp1)
-        exp2 = resolver_expresion_aritmetica(expCad.exp2)
-        return exp1 + exp2
+        exp = resolver_expresion_aritmetica(expCad)
+        return exp
     elif isinstance(expCad, ExpresionDobleComilla) :
         return expCad.val
     else :
@@ -48,7 +47,9 @@ if __name__ == '__main__':
                     COMENTARIO
                     DE BLOQUE
                     */
-                console.log(5+5);
+                console.log("Hola Mundo :D");
+                console.log((4+3)*(5+6));
+                console.log((5+6));
                 '''
     instrucciones = g.parse(input_text)
     procesar_instrucciones(instrucciones)
