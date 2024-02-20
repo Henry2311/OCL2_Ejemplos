@@ -20,6 +20,7 @@ pip install PLY
 |-------|--------------------|------------------------------------------------------------------------------|
 | 29/01 | Introduccion a PLY | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_2) |
 | 05/02 | Construccion AST | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_3) |
+| 19/02 | Tabla de Simbolos | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_4) |
 
 ## Documentación
 
