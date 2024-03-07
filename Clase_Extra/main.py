@@ -74,20 +74,22 @@ def resolver_expresion_logica(expLog, ts):
 
 def procesar_funcion(instr, ts):
     fun_ = ts.obtener(instr.id).instrucciones
-    
+    params_ = ts.obtener(instr.id).parametros
     if len(fun_) > 0:
         TablaLocal = TablaSimbolos(ts.simbolos.copy())
+        for i in range(len(instr.params)):
+            exp = resolver_expresion(instr.params[i], TablaLocal)
+            TablaLocal.agregar(Simbolos(params_[i],TIPO_DATO.ENTERO, exp))
+        procesar_instrucciones(fun_, TablaLocal)
 
-    # for params in instr.params:
-    #     exp = resolver_expresion(params.exp)
-    #     TablaLocal.agregar(Simbolos(params.id, TIPO_DATO.ENTERO, exp))
-
-        procesar_instrucciones(fun_,TablaLocal)
-
+        if fun_.ret_ is not None:
+            #return resolver(exp)
+            pass
 
 def guardar_funcion(instr, ts):
-    id = instr.id
-    simbolo = Simbolos(id, TIPO_DATO.FUNCION, None, instr.instrucciones, instr.parametros)
+    funcion_id = instr.id
+
+    simbolo = Simbolos(funcion_id, TIPO_DATO.FUNCION, instr.parametros, instr.instrucciones, instr.parametros)
     ts.agregar(simbolo)
 
 def procesar_instrucciones(instrucciones, ts, save=False) :
@@ -124,18 +126,18 @@ if __name__ == '__main__':
                     DE BLOQUE
                     */
 
-                function imprimir(){
-                    console.log("HOLA, PRUEBA DE FUNCION");
-                };
+                let c = 10;
 
-                let a = 10;
-
-                if(a > 5){
-                    imprimir();
+                if(c > 5){
+                    suma(c,45/5);
                 }else{
                     console.log("A no es mayor que 5");
                 };
 
+
+                function suma(a, b){
+                    return a + b;
+                };
                 '''
     
 

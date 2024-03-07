@@ -30,7 +30,8 @@ tokens = [
     'ID',
     'IGUAL',
     'LLAVIZQ',
-    'LLAVDER'
+    'LLAVDER',
+    'COMA'
 ] + list(reservadas.values())
 
 t_CONSOLE  = r'console'
@@ -54,6 +55,7 @@ t_PUNTO    = r'\.'
 t_PUNTOCOMA    = r';'
 t_LLAVIZQ   = r'{'
 t_LLAVDER   = r'}'
+t_COMA   = r','
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
@@ -147,12 +149,14 @@ def p_if_instr(t) :
     t[0] = If(t[3], t[6])
 
 def  p_funcion_instr(t) :
-    'funcion_instr      : FUNCTION ID PARIZQ PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA'
-    t[0] = Function(t[2],instrucciones=t[6])
+    'funcion_instr      : FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA' 
+    params = [t[4], t[6]]
+    t[0] = Function(t[2], parametros=params, instrucciones=t[9])
 
 def  p_call_funcion_instr(t) :
-    'call_funcion_instr      : ID PARIZQ PARDER PUNTOCOMA'
-    t[0] = CallFunction(t[1])
+    'call_funcion_instr      : ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA'
+    params = [t[3], t[5]]
+    t[0] = CallFunction(t[1],params=params)
 
 def p_if_else_instr(t) :
     'if_else_instr      : IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA'
