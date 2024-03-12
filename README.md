@@ -23,6 +23,7 @@ pip install PLY
 | 19/02 | Tabla de Simbolos | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_4) |
 | 26/02 | Uso de Entorno | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_5) |
 | 05/03 | Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_Extra) |
+| 11/03 | Interfaces | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_6) |
 
 ## Documentación
 
