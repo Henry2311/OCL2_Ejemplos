@@ -5,13 +5,12 @@ from instrucciones import *
 
 
 def procesar_imprimir(instr, ts):
-    exp = resolver_expresion(instr.cad, ts)
-    if(isinstance(exp,tuple)):
-        ts.salida += f'>> {exp[0]}\n'
-        #print('>> ', exp[0])
-    else:
-        ts.salida += f'>> {exp}\n'
-        #print('>> ', exp)
+    exp, size = resolver_expresion(instr.cad, ts)
+
+    ts.salida += f'''la a1, {exp}
+                     li a2, {size}
+                     jal ra, console_log'''
+    
 
 def procesar_declaracion(instr, ts):
     id = instr.id
@@ -55,7 +54,8 @@ def resolver_expresion(expCad, ts) :
         exp = resolver_expresion_logica(expCad, ts)
         return exp
     elif isinstance(expCad, ExpresionDobleComilla) :
-        return expCad.val
+        ts.dato = f'msg: .asciz "{expCad.val}"'
+        return 'msg', len(expCad.val)
     elif isinstance(expCad, ExpresionID):
         exp_id =  ts.obtener(expCad.id)
         if exp_id.valor is None:
@@ -194,32 +194,7 @@ def procesar_instrucciones(instrucciones, ts, save=False) :
 
 if __name__ == '__main__':
     input_text = '''
-                    
-                    function Fibonacci(a:number):number{
-                        if(a <= 1){
-                            return a;
-                        };
-                        return Fibonacci(a-1) + Fibonacci(a-2);
-                    };
-
-                    console.log(Fibonacci(10));
-                    console.log(Fibonacci(5,0));
-                    console.log(Fibonacci(10,0));
-                    //console.log(Fibonacci(20,0));
-                    //console.log(Fibonacci(30,0));
-                    
-
-                    /*function ackermann(m, n){
-                        if(m == 0){
-                            return n+1;
-                        };
-
-                        if(n == 0){
-                            return ackermann(m - 1, 1);
-                        };
-                        return ackermann(m - 1, ackermann(m, n - 1));
-                    };
-                    console.log(ackermann(10,10));*/
+                   console.log("Hola Mundo, Este es un mensaje mas largo");
                 '''
     
 
@@ -230,6 +205,23 @@ if __name__ == '__main__':
     #     procesar_instrucciones(instrucciones, ts)
     # except Exception as e:
     #     print("Error", e)
-    procesar_instrucciones(instrucciones, ts, save=True)
     procesar_instrucciones(instrucciones, ts)
-    print(ts.salida);
+
+    print(f'''
+    .data
+    {ts.dato}
+    .text
+    .globl main
+    main:
+    {ts.salida}
+    li a7, 10    
+    ecall
+
+
+    console_log:
+        li a0, 1 
+        li a7, 64 
+        ecall
+        ret
+    ''')
+    print(ts.salida)

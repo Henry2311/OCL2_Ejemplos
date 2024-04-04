@@ -1,0 +1,10 @@
+.data
+msg: .asciz "Compi2" # Guarda un string en memoria
+var1: .word 32
+.text
+start:
+li a0, 1 # a0: file descriptor = 1 (stdout)
+la a1, msg # a1: ubicacion del mensaje para el buffer
+li a2, 14 # a2: tamaño del buffer (14 bytes)
+li a7, 64 # a7: syscall code (write = 64)
+ecall # invoca la llamada al sistema

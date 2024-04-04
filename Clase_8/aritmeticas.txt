@@ -1,0 +1,83 @@
+.data
+result: .word 0       #Variable para almacenar
+msg_suma: .asciz "Suma: "
+msg_resta: .asciz "Resta: "
+msg_multiplicacion: .asciz "Multiplicacion: "
+msg_division: .asciz "Division: "
+msg_modulo: .asciz "Modulo: "
+
+.text
+.globl main
+main:
+
+#Declaracion de Variable
+
+li t0, 25  #Primer valor
+li t1, 5   #Segundo valor
+
+
+#Suma
+jal ra, suma
+jal ra, console_log
+
+#Resta
+jal ra, resta
+jal ra, console_log
+
+#Multiplicacion
+jal ra, multiplicacion
+jal ra, console_log
+
+#Division
+jal ra, division
+jal ra, console_log
+
+#Modulo
+jal ra, modulo
+jal ra, console_log
+
+
+#Exit
+li a7, 10       #syscall para terminar ejecucion
+ecall
+
+suma:
+    add t2, t0, t1  #Suma de 2 numeros
+    la t6, result   #Cargar el valor de result
+    sw t2, 0(t6)    #Almacenar en result 
+    ret
+
+resta:
+    sub t2, t0, t1  #Resta de 2 numeros
+    la t6, result   #Cargar el valor de result
+    sw t2, 0(t6)    #Almacenar en result 
+    ret
+
+multiplicacion:
+    mul t2, t0, t1  #Multiplicacion de 2 numeros
+    la t6, result   #Cargar el valor de result
+    sw t2, 0(t6)    #Almacenar en result 
+    ret
+
+division:
+    div t2, t0, t1  #Division de 2 numeros
+    la t6, result   #Cargar el valor de result
+    sw t2, 0(t6)    #Almacenar en result 
+    ret
+
+modulo:
+    rem t2, t0, t1  #Modulo de 2 numeros
+    la t6, result   #Cargar el valor de result
+    sw t2, 0(t6)    #Almacenar en result 
+    ret
+
+console_log:
+    lw a0, result       #Cargar resultado a A0
+    li a7, 1            #syscall para imprimir enteros 
+    ecall
+
+    li a0, 10           #Salto de linea
+    li a7, 11           #syscall para imprimir caracter
+    ecall
+
+    ret
