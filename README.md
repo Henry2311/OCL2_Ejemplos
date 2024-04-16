@@ -27,6 +27,7 @@ pip install PLY
 | 18/03 | Return en Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_7) |
 | 01/04 | RISC-V | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_8) |
 | 07/04 | Traduccion a RISC-V 1 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_9) |
+| 07/04 | Traduccion a RISC-V 2 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_Extra_2) |
 
 ## Documentación
 
