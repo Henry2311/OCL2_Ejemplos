@@ -1,0 +1,40 @@
+.data
+          
+    a: .word 0
+msg0: .asciz "While "
+
+
+    .text
+    .globl main
+    main:
+
+    addi t0, zero, 3
+    la t1, a
+    sw t0, 0(t1)
+
+    L0:
+        la t3, a
+        lw t4, 0(t3)
+        addi t5, zero, 1
+        bgt t4, t5, L1
+        j L2
+    L1:
+        la a1, msg0
+        li a2, 6
+        li a0, 1 
+        li a7, 64 
+        ecall
+        
+        la t3, a
+        lw t4, 0(t3)
+        addi t5, zero, 1
+        sub t6, t4, t5
+
+        la t0, a
+        sw t6, 0(t0)
+        j L0
+        L2:
+
+
+    li a7, 10    
+    ecall

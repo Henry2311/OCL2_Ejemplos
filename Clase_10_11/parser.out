@@ -1,0 +1,3251 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COMMENTBLOCK
+    NUMBER
+    STRING
+    TIPONUMBER
+
+Grammar
+
+Rule 0     S' -> init
+Rule 1     init -> instrucciones
+Rule 2     instrucciones -> instrucciones instruccion
+Rule 3     instrucciones -> instruccion
+Rule 4     instruccion -> imprimir_instr
+Rule 5     instruccion -> declaracion_instr
+Rule 6     instruccion -> asignacion_instr
+Rule 7     instruccion -> if_instr
+Rule 8     instruccion -> if_else_instr
+Rule 9     instruccion -> while_instr
+Rule 10    instruccion -> funcion_instr
+Rule 11    instruccion -> call_funcion_instr
+Rule 12    instruccion -> interface_instr
+Rule 13    instruccion -> return_instr
+Rule 14    instruccion -> break_instr
+Rule 15    break_instr -> BREAK PUNTOCOMA
+Rule 16    return_instr -> RETURN expresion PUNTOCOMA
+Rule 17    return_instr -> RETURN PUNTOCOMA
+Rule 18    interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+Rule 19    interface_params -> interface_params PUNTOCOMA ID DOSPUNTOS expresion
+Rule 20    interface_params -> ID DOSPUNTOS expresion
+Rule 21    imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+Rule 22    declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA
+Rule 23    asignacion_instr -> ID IGUAL expresion PUNTOCOMA
+Rule 24    if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+Rule 25    funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+Rule 26    call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+Rule 27    if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+Rule 28    while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+Rule 29    expresion -> expresion MAS expresion
+Rule 30    expresion -> expresion MENOS expresion
+Rule 31    expresion -> expresion POR expresion
+Rule 32    expresion -> expresion DIVIDIDO expresion
+Rule 33    expresion -> expresion AND expresion
+Rule 34    expresion -> expresion OR expresion
+Rule 35    expresion -> expresion MAYQUE expresion
+Rule 36    expresion -> expresion MENQUE expresion
+Rule 37    expresion -> expresion IGUALQUE expresion
+Rule 38    expresion -> expresion NIGUALQUE expresion
+Rule 39    expresion -> expresion MENORIGUAL expresion
+Rule 40    expresion -> MENOS expresion
+Rule 41    expresion -> PARIZQ expresion PARDER
+Rule 42    expresion -> ENTERO
+Rule 43    expresion -> CADENA
+Rule 44    expresion -> ID
+Rule 45    expresion -> ID PUNTO ID
+Rule 46    expresion -> ID PARIZQ expresion COMA expresion PARDER
+
+Terminals, with rules where they appear
+
+AND                  : 33
+BREAK                : 15
+CADENA               : 43
+COMA                 : 25 26 46
+COMMENTBLOCK         : 
+CONSOLE              : 21
+DIVIDIDO             : 32
+DOSPUNTOS            : 19 20
+ELSE                 : 27
+ENTERO               : 42
+FUNCTION             : 25
+ID                   : 18 19 20 22 23 25 25 25 26 44 45 45 46
+IF                   : 24 27
+IGUAL                : 22 23
+IGUALQUE             : 37
+INTERFACE            : 18
+LET                  : 22
+LLAVDER              : 18 24 25 27 27 28
+LLAVIZQ              : 18 24 25 27 27 28
+LOG                  : 21
+MAS                  : 29
+MAYQUE               : 35
+MENORIGUAL           : 39
+MENOS                : 30 40
+MENQUE               : 36
+NIGUALQUE            : 38
+NUMBER               : 
+OR                   : 34
+PARDER               : 21 24 25 26 27 28 41 46
+PARIZQ               : 21 24 25 26 27 28 41 46
+POR                  : 31
+PUNTO                : 21 45
+PUNTOCOMA            : 15 16 17 18 19 21 22 23 24 25 26 27 28
+RETURN               : 16 17
+STRING               : 
+TIPONUMBER           : 
+WHILE                : 28
+error                : 
+
+Nonterminals, with rules where they appear
+
+asignacion_instr     : 6
+break_instr          : 14
+call_funcion_instr   : 11
+declaracion_instr    : 5
+expresion            : 16 19 20 21 22 23 24 26 26 27 28 29 29 30 30 31 31 32 32 33 33 34 34 35 35 36 36 37 37 38 38 39 39 40 41 46 46
+funcion_instr        : 10
+if_else_instr        : 8
+if_instr             : 7
+imprimir_instr       : 4
+init                 : 0
+instruccion          : 2 3
+instrucciones        : 1 2 24 25 27 27 28
+interface_instr      : 12
+interface_params     : 18 19
+return_instr         : 13
+while_instr          : 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . init
+    (1) init -> . instrucciones
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    init                           shift and go to state 1
+    instrucciones                  shift and go to state 2
+    instruccion                    shift and go to state 3
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 1
+
+    (0) S' -> init .
+
+
+
+state 2
+
+    (1) init -> instrucciones .
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    $end            reduce using rule 1 (init -> instrucciones .)
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instruccion                    shift and go to state 24
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 3
+
+    (3) instrucciones -> instruccion .
+
+    CONSOLE         reduce using rule 3 (instrucciones -> instruccion .)
+    LET             reduce using rule 3 (instrucciones -> instruccion .)
+    ID              reduce using rule 3 (instrucciones -> instruccion .)
+    IF              reduce using rule 3 (instrucciones -> instruccion .)
+    WHILE           reduce using rule 3 (instrucciones -> instruccion .)
+    FUNCTION        reduce using rule 3 (instrucciones -> instruccion .)
+    INTERFACE       reduce using rule 3 (instrucciones -> instruccion .)
+    RETURN          reduce using rule 3 (instrucciones -> instruccion .)
+    BREAK           reduce using rule 3 (instrucciones -> instruccion .)
+    $end            reduce using rule 3 (instrucciones -> instruccion .)
+    LLAVDER         reduce using rule 3 (instrucciones -> instruccion .)
+
+
+state 4
+
+    (4) instruccion -> imprimir_instr .
+
+    CONSOLE         reduce using rule 4 (instruccion -> imprimir_instr .)
+    LET             reduce using rule 4 (instruccion -> imprimir_instr .)
+    ID              reduce using rule 4 (instruccion -> imprimir_instr .)
+    IF              reduce using rule 4 (instruccion -> imprimir_instr .)
+    WHILE           reduce using rule 4 (instruccion -> imprimir_instr .)
+    FUNCTION        reduce using rule 4 (instruccion -> imprimir_instr .)
+    INTERFACE       reduce using rule 4 (instruccion -> imprimir_instr .)
+    RETURN          reduce using rule 4 (instruccion -> imprimir_instr .)
+    BREAK           reduce using rule 4 (instruccion -> imprimir_instr .)
+    $end            reduce using rule 4 (instruccion -> imprimir_instr .)
+    LLAVDER         reduce using rule 4 (instruccion -> imprimir_instr .)
+
+
+state 5
+
+    (5) instruccion -> declaracion_instr .
+
+    CONSOLE         reduce using rule 5 (instruccion -> declaracion_instr .)
+    LET             reduce using rule 5 (instruccion -> declaracion_instr .)
+    ID              reduce using rule 5 (instruccion -> declaracion_instr .)
+    IF              reduce using rule 5 (instruccion -> declaracion_instr .)
+    WHILE           reduce using rule 5 (instruccion -> declaracion_instr .)
+    FUNCTION        reduce using rule 5 (instruccion -> declaracion_instr .)
+    INTERFACE       reduce using rule 5 (instruccion -> declaracion_instr .)
+    RETURN          reduce using rule 5 (instruccion -> declaracion_instr .)
+    BREAK           reduce using rule 5 (instruccion -> declaracion_instr .)
+    $end            reduce using rule 5 (instruccion -> declaracion_instr .)
+    LLAVDER         reduce using rule 5 (instruccion -> declaracion_instr .)
+
+
+state 6
+
+    (6) instruccion -> asignacion_instr .
+
+    CONSOLE         reduce using rule 6 (instruccion -> asignacion_instr .)
+    LET             reduce using rule 6 (instruccion -> asignacion_instr .)
+    ID              reduce using rule 6 (instruccion -> asignacion_instr .)
+    IF              reduce using rule 6 (instruccion -> asignacion_instr .)
+    WHILE           reduce using rule 6 (instruccion -> asignacion_instr .)
+    FUNCTION        reduce using rule 6 (instruccion -> asignacion_instr .)
+    INTERFACE       reduce using rule 6 (instruccion -> asignacion_instr .)
+    RETURN          reduce using rule 6 (instruccion -> asignacion_instr .)
+    BREAK           reduce using rule 6 (instruccion -> asignacion_instr .)
+    $end            reduce using rule 6 (instruccion -> asignacion_instr .)
+    LLAVDER         reduce using rule 6 (instruccion -> asignacion_instr .)
+
+
+state 7
+
+    (7) instruccion -> if_instr .
+
+    CONSOLE         reduce using rule 7 (instruccion -> if_instr .)
+    LET             reduce using rule 7 (instruccion -> if_instr .)
+    ID              reduce using rule 7 (instruccion -> if_instr .)
+    IF              reduce using rule 7 (instruccion -> if_instr .)
+    WHILE           reduce using rule 7 (instruccion -> if_instr .)
+    FUNCTION        reduce using rule 7 (instruccion -> if_instr .)
+    INTERFACE       reduce using rule 7 (instruccion -> if_instr .)
+    RETURN          reduce using rule 7 (instruccion -> if_instr .)
+    BREAK           reduce using rule 7 (instruccion -> if_instr .)
+    $end            reduce using rule 7 (instruccion -> if_instr .)
+    LLAVDER         reduce using rule 7 (instruccion -> if_instr .)
+
+
+state 8
+
+    (8) instruccion -> if_else_instr .
+
+    CONSOLE         reduce using rule 8 (instruccion -> if_else_instr .)
+    LET             reduce using rule 8 (instruccion -> if_else_instr .)
+    ID              reduce using rule 8 (instruccion -> if_else_instr .)
+    IF              reduce using rule 8 (instruccion -> if_else_instr .)
+    WHILE           reduce using rule 8 (instruccion -> if_else_instr .)
+    FUNCTION        reduce using rule 8 (instruccion -> if_else_instr .)
+    INTERFACE       reduce using rule 8 (instruccion -> if_else_instr .)
+    RETURN          reduce using rule 8 (instruccion -> if_else_instr .)
+    BREAK           reduce using rule 8 (instruccion -> if_else_instr .)
+    $end            reduce using rule 8 (instruccion -> if_else_instr .)
+    LLAVDER         reduce using rule 8 (instruccion -> if_else_instr .)
+
+
+state 9
+
+    (9) instruccion -> while_instr .
+
+    CONSOLE         reduce using rule 9 (instruccion -> while_instr .)
+    LET             reduce using rule 9 (instruccion -> while_instr .)
+    ID              reduce using rule 9 (instruccion -> while_instr .)
+    IF              reduce using rule 9 (instruccion -> while_instr .)
+    WHILE           reduce using rule 9 (instruccion -> while_instr .)
+    FUNCTION        reduce using rule 9 (instruccion -> while_instr .)
+    INTERFACE       reduce using rule 9 (instruccion -> while_instr .)
+    RETURN          reduce using rule 9 (instruccion -> while_instr .)
+    BREAK           reduce using rule 9 (instruccion -> while_instr .)
+    $end            reduce using rule 9 (instruccion -> while_instr .)
+    LLAVDER         reduce using rule 9 (instruccion -> while_instr .)
+
+
+state 10
+
+    (10) instruccion -> funcion_instr .
+
+    CONSOLE         reduce using rule 10 (instruccion -> funcion_instr .)
+    LET             reduce using rule 10 (instruccion -> funcion_instr .)
+    ID              reduce using rule 10 (instruccion -> funcion_instr .)
+    IF              reduce using rule 10 (instruccion -> funcion_instr .)
+    WHILE           reduce using rule 10 (instruccion -> funcion_instr .)
+    FUNCTION        reduce using rule 10 (instruccion -> funcion_instr .)
+    INTERFACE       reduce using rule 10 (instruccion -> funcion_instr .)
+    RETURN          reduce using rule 10 (instruccion -> funcion_instr .)
+    BREAK           reduce using rule 10 (instruccion -> funcion_instr .)
+    $end            reduce using rule 10 (instruccion -> funcion_instr .)
+    LLAVDER         reduce using rule 10 (instruccion -> funcion_instr .)
+
+
+state 11
+
+    (11) instruccion -> call_funcion_instr .
+
+    CONSOLE         reduce using rule 11 (instruccion -> call_funcion_instr .)
+    LET             reduce using rule 11 (instruccion -> call_funcion_instr .)
+    ID              reduce using rule 11 (instruccion -> call_funcion_instr .)
+    IF              reduce using rule 11 (instruccion -> call_funcion_instr .)
+    WHILE           reduce using rule 11 (instruccion -> call_funcion_instr .)
+    FUNCTION        reduce using rule 11 (instruccion -> call_funcion_instr .)
+    INTERFACE       reduce using rule 11 (instruccion -> call_funcion_instr .)
+    RETURN          reduce using rule 11 (instruccion -> call_funcion_instr .)
+    BREAK           reduce using rule 11 (instruccion -> call_funcion_instr .)
+    $end            reduce using rule 11 (instruccion -> call_funcion_instr .)
+    LLAVDER         reduce using rule 11 (instruccion -> call_funcion_instr .)
+
+
+state 12
+
+    (12) instruccion -> interface_instr .
+
+    CONSOLE         reduce using rule 12 (instruccion -> interface_instr .)
+    LET             reduce using rule 12 (instruccion -> interface_instr .)
+    ID              reduce using rule 12 (instruccion -> interface_instr .)
+    IF              reduce using rule 12 (instruccion -> interface_instr .)
+    WHILE           reduce using rule 12 (instruccion -> interface_instr .)
+    FUNCTION        reduce using rule 12 (instruccion -> interface_instr .)
+    INTERFACE       reduce using rule 12 (instruccion -> interface_instr .)
+    RETURN          reduce using rule 12 (instruccion -> interface_instr .)
+    BREAK           reduce using rule 12 (instruccion -> interface_instr .)
+    $end            reduce using rule 12 (instruccion -> interface_instr .)
+    LLAVDER         reduce using rule 12 (instruccion -> interface_instr .)
+
+
+state 13
+
+    (13) instruccion -> return_instr .
+
+    CONSOLE         reduce using rule 13 (instruccion -> return_instr .)
+    LET             reduce using rule 13 (instruccion -> return_instr .)
+    ID              reduce using rule 13 (instruccion -> return_instr .)
+    IF              reduce using rule 13 (instruccion -> return_instr .)
+    WHILE           reduce using rule 13 (instruccion -> return_instr .)
+    FUNCTION        reduce using rule 13 (instruccion -> return_instr .)
+    INTERFACE       reduce using rule 13 (instruccion -> return_instr .)
+    RETURN          reduce using rule 13 (instruccion -> return_instr .)
+    BREAK           reduce using rule 13 (instruccion -> return_instr .)
+    $end            reduce using rule 13 (instruccion -> return_instr .)
+    LLAVDER         reduce using rule 13 (instruccion -> return_instr .)
+
+
+state 14
+
+    (14) instruccion -> break_instr .
+
+    CONSOLE         reduce using rule 14 (instruccion -> break_instr .)
+    LET             reduce using rule 14 (instruccion -> break_instr .)
+    ID              reduce using rule 14 (instruccion -> break_instr .)
+    IF              reduce using rule 14 (instruccion -> break_instr .)
+    WHILE           reduce using rule 14 (instruccion -> break_instr .)
+    FUNCTION        reduce using rule 14 (instruccion -> break_instr .)
+    INTERFACE       reduce using rule 14 (instruccion -> break_instr .)
+    RETURN          reduce using rule 14 (instruccion -> break_instr .)
+    BREAK           reduce using rule 14 (instruccion -> break_instr .)
+    $end            reduce using rule 14 (instruccion -> break_instr .)
+    LLAVDER         reduce using rule 14 (instruccion -> break_instr .)
+
+
+state 15
+
+    (21) imprimir_instr -> CONSOLE . PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+
+    PUNTO           shift and go to state 25
+
+
+state 16
+
+    (22) declaracion_instr -> LET . ID IGUAL expresion PUNTOCOMA
+
+    ID              shift and go to state 26
+
+
+state 17
+
+    (23) asignacion_instr -> ID . IGUAL expresion PUNTOCOMA
+    (26) call_funcion_instr -> ID . PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+
+    IGUAL           shift and go to state 27
+    PARIZQ          shift and go to state 28
+
+
+state 18
+
+    (24) if_instr -> IF . PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF . PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    PARIZQ          shift and go to state 29
+
+
+state 19
+
+    (28) while_instr -> WHILE . PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    PARIZQ          shift and go to state 30
+
+
+state 20
+
+    (25) funcion_instr -> FUNCTION . ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    ID              shift and go to state 31
+
+
+state 21
+
+    (18) interface_instr -> INTERFACE . ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+
+    ID              shift and go to state 32
+
+
+state 22
+
+    (16) return_instr -> RETURN . expresion PUNTOCOMA
+    (17) return_instr -> RETURN . PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    PUNTOCOMA       shift and go to state 34
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 33
+
+state 23
+
+    (15) break_instr -> BREAK . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 40
+
+
+state 24
+
+    (2) instrucciones -> instrucciones instruccion .
+
+    CONSOLE         reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    LET             reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    ID              reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    IF              reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    WHILE           reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    FUNCTION        reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    INTERFACE       reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    RETURN          reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    BREAK           reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    $end            reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    LLAVDER         reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+
+
+state 25
+
+    (21) imprimir_instr -> CONSOLE PUNTO . LOG PARIZQ expresion PARDER PUNTOCOMA
+
+    LOG             shift and go to state 41
+
+
+state 26
+
+    (22) declaracion_instr -> LET ID . IGUAL expresion PUNTOCOMA
+
+    IGUAL           shift and go to state 42
+
+
+state 27
+
+    (23) asignacion_instr -> ID IGUAL . expresion PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 43
+
+state 28
+
+    (26) call_funcion_instr -> ID PARIZQ . expresion COMA expresion PARDER PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 44
+
+state 29
+
+    (24) if_instr -> IF PARIZQ . expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ . expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 45
+
+state 30
+
+    (28) while_instr -> WHILE PARIZQ . expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 46
+
+state 31
+
+    (25) funcion_instr -> FUNCTION ID . PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    PARIZQ          shift and go to state 47
+
+
+state 32
+
+    (18) interface_instr -> INTERFACE ID . LLAVIZQ interface_params PUNTOCOMA LLAVDER
+
+    LLAVIZQ         shift and go to state 48
+
+
+state 33
+
+    (16) return_instr -> RETURN expresion . PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       shift and go to state 49
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 34
+
+    (17) return_instr -> RETURN PUNTOCOMA .
+
+    CONSOLE         reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    LET             reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    ID              reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    IF              reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    WHILE           reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    FUNCTION        reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    INTERFACE       reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    RETURN          reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    BREAK           reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    $end            reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+    LLAVDER         reduce using rule 17 (return_instr -> RETURN PUNTOCOMA .)
+
+
+state 35
+
+    (40) expresion -> MENOS . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 61
+
+state 36
+
+    (41) expresion -> PARIZQ . expresion PARDER
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 62
+
+state 37
+
+    (42) expresion -> ENTERO .
+
+    PUNTOCOMA       reduce using rule 42 (expresion -> ENTERO .)
+    MAS             reduce using rule 42 (expresion -> ENTERO .)
+    MENOS           reduce using rule 42 (expresion -> ENTERO .)
+    POR             reduce using rule 42 (expresion -> ENTERO .)
+    DIVIDIDO        reduce using rule 42 (expresion -> ENTERO .)
+    AND             reduce using rule 42 (expresion -> ENTERO .)
+    OR              reduce using rule 42 (expresion -> ENTERO .)
+    MAYQUE          reduce using rule 42 (expresion -> ENTERO .)
+    MENQUE          reduce using rule 42 (expresion -> ENTERO .)
+    IGUALQUE        reduce using rule 42 (expresion -> ENTERO .)
+    NIGUALQUE       reduce using rule 42 (expresion -> ENTERO .)
+    MENORIGUAL      reduce using rule 42 (expresion -> ENTERO .)
+    COMA            reduce using rule 42 (expresion -> ENTERO .)
+    PARDER          reduce using rule 42 (expresion -> ENTERO .)
+
+
+state 38
+
+    (43) expresion -> CADENA .
+
+    PUNTOCOMA       reduce using rule 43 (expresion -> CADENA .)
+    MAS             reduce using rule 43 (expresion -> CADENA .)
+    MENOS           reduce using rule 43 (expresion -> CADENA .)
+    POR             reduce using rule 43 (expresion -> CADENA .)
+    DIVIDIDO        reduce using rule 43 (expresion -> CADENA .)
+    AND             reduce using rule 43 (expresion -> CADENA .)
+    OR              reduce using rule 43 (expresion -> CADENA .)
+    MAYQUE          reduce using rule 43 (expresion -> CADENA .)
+    MENQUE          reduce using rule 43 (expresion -> CADENA .)
+    IGUALQUE        reduce using rule 43 (expresion -> CADENA .)
+    NIGUALQUE       reduce using rule 43 (expresion -> CADENA .)
+    MENORIGUAL      reduce using rule 43 (expresion -> CADENA .)
+    COMA            reduce using rule 43 (expresion -> CADENA .)
+    PARDER          reduce using rule 43 (expresion -> CADENA .)
+
+
+state 39
+
+    (44) expresion -> ID .
+    (45) expresion -> ID . PUNTO ID
+    (46) expresion -> ID . PARIZQ expresion COMA expresion PARDER
+
+    PUNTOCOMA       reduce using rule 44 (expresion -> ID .)
+    MAS             reduce using rule 44 (expresion -> ID .)
+    MENOS           reduce using rule 44 (expresion -> ID .)
+    POR             reduce using rule 44 (expresion -> ID .)
+    DIVIDIDO        reduce using rule 44 (expresion -> ID .)
+    AND             reduce using rule 44 (expresion -> ID .)
+    OR              reduce using rule 44 (expresion -> ID .)
+    MAYQUE          reduce using rule 44 (expresion -> ID .)
+    MENQUE          reduce using rule 44 (expresion -> ID .)
+    IGUALQUE        reduce using rule 44 (expresion -> ID .)
+    NIGUALQUE       reduce using rule 44 (expresion -> ID .)
+    MENORIGUAL      reduce using rule 44 (expresion -> ID .)
+    COMA            reduce using rule 44 (expresion -> ID .)
+    PARDER          reduce using rule 44 (expresion -> ID .)
+    PUNTO           shift and go to state 63
+    PARIZQ          shift and go to state 64
+
+
+state 40
+
+    (15) break_instr -> BREAK PUNTOCOMA .
+
+    CONSOLE         reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    LET             reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    ID              reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    IF              reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    WHILE           reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    FUNCTION        reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    INTERFACE       reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    RETURN          reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    BREAK           reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    $end            reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+    LLAVDER         reduce using rule 15 (break_instr -> BREAK PUNTOCOMA .)
+
+
+state 41
+
+    (21) imprimir_instr -> CONSOLE PUNTO LOG . PARIZQ expresion PARDER PUNTOCOMA
+
+    PARIZQ          shift and go to state 65
+
+
+state 42
+
+    (22) declaracion_instr -> LET ID IGUAL . expresion PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 66
+
+state 43
+
+    (23) asignacion_instr -> ID IGUAL expresion . PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       shift and go to state 67
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 44
+
+    (26) call_funcion_instr -> ID PARIZQ expresion . COMA expresion PARDER PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    COMA            shift and go to state 68
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 45
+
+    (24) if_instr -> IF PARIZQ expresion . PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ expresion . PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 69
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 46
+
+    (28) while_instr -> WHILE PARIZQ expresion . PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 70
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 47
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ . ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    ID              shift and go to state 71
+
+
+state 48
+
+    (18) interface_instr -> INTERFACE ID LLAVIZQ . interface_params PUNTOCOMA LLAVDER
+    (19) interface_params -> . interface_params PUNTOCOMA ID DOSPUNTOS expresion
+    (20) interface_params -> . ID DOSPUNTOS expresion
+
+    ID              shift and go to state 72
+
+    interface_params               shift and go to state 73
+
+state 49
+
+    (16) return_instr -> RETURN expresion PUNTOCOMA .
+
+    CONSOLE         reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    LET             reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    ID              reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    IF              reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    WHILE           reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    FUNCTION        reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    INTERFACE       reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    RETURN          reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    BREAK           reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    $end            reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+    LLAVDER         reduce using rule 16 (return_instr -> RETURN expresion PUNTOCOMA .)
+
+
+state 50
+
+    (29) expresion -> expresion MAS . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 74
+
+state 51
+
+    (30) expresion -> expresion MENOS . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 75
+
+state 52
+
+    (31) expresion -> expresion POR . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 76
+
+state 53
+
+    (32) expresion -> expresion DIVIDIDO . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 77
+
+state 54
+
+    (33) expresion -> expresion AND . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 78
+
+state 55
+
+    (34) expresion -> expresion OR . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 79
+
+state 56
+
+    (35) expresion -> expresion MAYQUE . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 80
+
+state 57
+
+    (36) expresion -> expresion MENQUE . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 81
+
+state 58
+
+    (37) expresion -> expresion IGUALQUE . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 82
+
+state 59
+
+    (38) expresion -> expresion NIGUALQUE . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 83
+
+state 60
+
+    (39) expresion -> expresion MENORIGUAL . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 84
+
+state 61
+
+    (40) expresion -> MENOS expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 40 (expresion -> MENOS expresion .)
+    MAS             reduce using rule 40 (expresion -> MENOS expresion .)
+    MENOS           reduce using rule 40 (expresion -> MENOS expresion .)
+    POR             reduce using rule 40 (expresion -> MENOS expresion .)
+    DIVIDIDO        reduce using rule 40 (expresion -> MENOS expresion .)
+    AND             reduce using rule 40 (expresion -> MENOS expresion .)
+    OR              reduce using rule 40 (expresion -> MENOS expresion .)
+    MAYQUE          reduce using rule 40 (expresion -> MENOS expresion .)
+    MENQUE          reduce using rule 40 (expresion -> MENOS expresion .)
+    IGUALQUE        reduce using rule 40 (expresion -> MENOS expresion .)
+    NIGUALQUE       reduce using rule 40 (expresion -> MENOS expresion .)
+    MENORIGUAL      reduce using rule 40 (expresion -> MENOS expresion .)
+    COMA            reduce using rule 40 (expresion -> MENOS expresion .)
+    PARDER          reduce using rule 40 (expresion -> MENOS expresion .)
+
+  ! MAS             [ shift and go to state 50 ]
+  ! MENOS           [ shift and go to state 51 ]
+  ! POR             [ shift and go to state 52 ]
+  ! DIVIDIDO        [ shift and go to state 53 ]
+  ! AND             [ shift and go to state 54 ]
+  ! OR              [ shift and go to state 55 ]
+  ! MAYQUE          [ shift and go to state 56 ]
+  ! MENQUE          [ shift and go to state 57 ]
+  ! IGUALQUE        [ shift and go to state 58 ]
+  ! NIGUALQUE       [ shift and go to state 59 ]
+  ! MENORIGUAL      [ shift and go to state 60 ]
+
+
+state 62
+
+    (41) expresion -> PARIZQ expresion . PARDER
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 85
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 63
+
+    (45) expresion -> ID PUNTO . ID
+
+    ID              shift and go to state 86
+
+
+state 64
+
+    (46) expresion -> ID PARIZQ . expresion COMA expresion PARDER
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 87
+
+state 65
+
+    (21) imprimir_instr -> CONSOLE PUNTO LOG PARIZQ . expresion PARDER PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 88
+
+state 66
+
+    (22) declaracion_instr -> LET ID IGUAL expresion . PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       shift and go to state 89
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 67
+
+    (23) asignacion_instr -> ID IGUAL expresion PUNTOCOMA .
+
+    CONSOLE         reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    LET             reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    ID              reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    IF              reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    WHILE           reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    FUNCTION        reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    INTERFACE       reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    RETURN          reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    BREAK           reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    $end            reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+    LLAVDER         reduce using rule 23 (asignacion_instr -> ID IGUAL expresion PUNTOCOMA .)
+
+
+state 68
+
+    (26) call_funcion_instr -> ID PARIZQ expresion COMA . expresion PARDER PUNTOCOMA
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 90
+
+state 69
+
+    (24) if_instr -> IF PARIZQ expresion PARDER . LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ expresion PARDER . LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    LLAVIZQ         shift and go to state 91
+
+
+state 70
+
+    (28) while_instr -> WHILE PARIZQ expresion PARDER . LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    LLAVIZQ         shift and go to state 92
+
+
+state 71
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID . COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    COMA            shift and go to state 93
+
+
+state 72
+
+    (20) interface_params -> ID . DOSPUNTOS expresion
+
+    DOSPUNTOS       shift and go to state 94
+
+
+state 73
+
+    (18) interface_instr -> INTERFACE ID LLAVIZQ interface_params . PUNTOCOMA LLAVDER
+    (19) interface_params -> interface_params . PUNTOCOMA ID DOSPUNTOS expresion
+
+    PUNTOCOMA       shift and go to state 95
+
+
+state 74
+
+    (29) expresion -> expresion MAS expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 29 (expresion -> expresion MAS expresion .)
+    MAS             reduce using rule 29 (expresion -> expresion MAS expresion .)
+    MENOS           reduce using rule 29 (expresion -> expresion MAS expresion .)
+    AND             reduce using rule 29 (expresion -> expresion MAS expresion .)
+    OR              reduce using rule 29 (expresion -> expresion MAS expresion .)
+    MAYQUE          reduce using rule 29 (expresion -> expresion MAS expresion .)
+    MENQUE          reduce using rule 29 (expresion -> expresion MAS expresion .)
+    IGUALQUE        reduce using rule 29 (expresion -> expresion MAS expresion .)
+    NIGUALQUE       reduce using rule 29 (expresion -> expresion MAS expresion .)
+    MENORIGUAL      reduce using rule 29 (expresion -> expresion MAS expresion .)
+    COMA            reduce using rule 29 (expresion -> expresion MAS expresion .)
+    PARDER          reduce using rule 29 (expresion -> expresion MAS expresion .)
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+
+  ! POR             [ reduce using rule 29 (expresion -> expresion MAS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 29 (expresion -> expresion MAS expresion .) ]
+  ! MAS             [ shift and go to state 50 ]
+  ! MENOS           [ shift and go to state 51 ]
+  ! AND             [ shift and go to state 54 ]
+  ! OR              [ shift and go to state 55 ]
+  ! MAYQUE          [ shift and go to state 56 ]
+  ! MENQUE          [ shift and go to state 57 ]
+  ! IGUALQUE        [ shift and go to state 58 ]
+  ! NIGUALQUE       [ shift and go to state 59 ]
+  ! MENORIGUAL      [ shift and go to state 60 ]
+
+
+state 75
+
+    (30) expresion -> expresion MENOS expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    MAS             reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    MENOS           reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    AND             reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    OR              reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    MAYQUE          reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    MENQUE          reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    IGUALQUE        reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    NIGUALQUE       reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    MENORIGUAL      reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    COMA            reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    PARDER          reduce using rule 30 (expresion -> expresion MENOS expresion .)
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+
+  ! POR             [ reduce using rule 30 (expresion -> expresion MENOS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 30 (expresion -> expresion MENOS expresion .) ]
+  ! MAS             [ shift and go to state 50 ]
+  ! MENOS           [ shift and go to state 51 ]
+  ! AND             [ shift and go to state 54 ]
+  ! OR              [ shift and go to state 55 ]
+  ! MAYQUE          [ shift and go to state 56 ]
+  ! MENQUE          [ shift and go to state 57 ]
+  ! IGUALQUE        [ shift and go to state 58 ]
+  ! NIGUALQUE       [ shift and go to state 59 ]
+  ! MENORIGUAL      [ shift and go to state 60 ]
+
+
+state 76
+
+    (31) expresion -> expresion POR expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 31 (expresion -> expresion POR expresion .)
+    MAS             reduce using rule 31 (expresion -> expresion POR expresion .)
+    MENOS           reduce using rule 31 (expresion -> expresion POR expresion .)
+    POR             reduce using rule 31 (expresion -> expresion POR expresion .)
+    DIVIDIDO        reduce using rule 31 (expresion -> expresion POR expresion .)
+    AND             reduce using rule 31 (expresion -> expresion POR expresion .)
+    OR              reduce using rule 31 (expresion -> expresion POR expresion .)
+    MAYQUE          reduce using rule 31 (expresion -> expresion POR expresion .)
+    MENQUE          reduce using rule 31 (expresion -> expresion POR expresion .)
+    IGUALQUE        reduce using rule 31 (expresion -> expresion POR expresion .)
+    NIGUALQUE       reduce using rule 31 (expresion -> expresion POR expresion .)
+    MENORIGUAL      reduce using rule 31 (expresion -> expresion POR expresion .)
+    COMA            reduce using rule 31 (expresion -> expresion POR expresion .)
+    PARDER          reduce using rule 31 (expresion -> expresion POR expresion .)
+
+  ! MAS             [ shift and go to state 50 ]
+  ! MENOS           [ shift and go to state 51 ]
+  ! POR             [ shift and go to state 52 ]
+  ! DIVIDIDO        [ shift and go to state 53 ]
+  ! AND             [ shift and go to state 54 ]
+  ! OR              [ shift and go to state 55 ]
+  ! MAYQUE          [ shift and go to state 56 ]
+  ! MENQUE          [ shift and go to state 57 ]
+  ! IGUALQUE        [ shift and go to state 58 ]
+  ! NIGUALQUE       [ shift and go to state 59 ]
+  ! MENORIGUAL      [ shift and go to state 60 ]
+
+
+state 77
+
+    (32) expresion -> expresion DIVIDIDO expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    MAS             reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    MENOS           reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    POR             reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    DIVIDIDO        reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    AND             reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    OR              reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    MAYQUE          reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    MENQUE          reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    IGUALQUE        reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    NIGUALQUE       reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    MENORIGUAL      reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    COMA            reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+    PARDER          reduce using rule 32 (expresion -> expresion DIVIDIDO expresion .)
+
+  ! MAS             [ shift and go to state 50 ]
+  ! MENOS           [ shift and go to state 51 ]
+  ! POR             [ shift and go to state 52 ]
+  ! DIVIDIDO        [ shift and go to state 53 ]
+  ! AND             [ shift and go to state 54 ]
+  ! OR              [ shift and go to state 55 ]
+  ! MAYQUE          [ shift and go to state 56 ]
+  ! MENQUE          [ shift and go to state 57 ]
+  ! IGUALQUE        [ shift and go to state 58 ]
+  ! NIGUALQUE       [ shift and go to state 59 ]
+  ! MENORIGUAL      [ shift and go to state 60 ]
+
+
+state 78
+
+    (33) expresion -> expresion AND expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 33 (expresion -> expresion AND expresion .)
+    COMA            reduce using rule 33 (expresion -> expresion AND expresion .)
+    PARDER          reduce using rule 33 (expresion -> expresion AND expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! MENOS           [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! POR             [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! AND             [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! OR              [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! MAYQUE          [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! MENQUE          [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! IGUALQUE        [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 33 (expresion -> expresion AND expresion .) ]
+
+
+state 79
+
+    (34) expresion -> expresion OR expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 34 (expresion -> expresion OR expresion .)
+    COMA            reduce using rule 34 (expresion -> expresion OR expresion .)
+    PARDER          reduce using rule 34 (expresion -> expresion OR expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! MENOS           [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! POR             [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! AND             [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! OR              [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! MAYQUE          [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! MENQUE          [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! IGUALQUE        [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 34 (expresion -> expresion OR expresion .) ]
+
+
+state 80
+
+    (35) expresion -> expresion MAYQUE expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 35 (expresion -> expresion MAYQUE expresion .)
+    COMA            reduce using rule 35 (expresion -> expresion MAYQUE expresion .)
+    PARDER          reduce using rule 35 (expresion -> expresion MAYQUE expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! MENOS           [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! POR             [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! AND             [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! OR              [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! MAYQUE          [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! MENQUE          [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! IGUALQUE        [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 35 (expresion -> expresion MAYQUE expresion .) ]
+
+
+state 81
+
+    (36) expresion -> expresion MENQUE expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 36 (expresion -> expresion MENQUE expresion .)
+    COMA            reduce using rule 36 (expresion -> expresion MENQUE expresion .)
+    PARDER          reduce using rule 36 (expresion -> expresion MENQUE expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! MENOS           [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! POR             [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! AND             [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! OR              [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! MAYQUE          [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! MENQUE          [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! IGUALQUE        [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 36 (expresion -> expresion MENQUE expresion .) ]
+
+
+state 82
+
+    (37) expresion -> expresion IGUALQUE expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 37 (expresion -> expresion IGUALQUE expresion .)
+    COMA            reduce using rule 37 (expresion -> expresion IGUALQUE expresion .)
+    PARDER          reduce using rule 37 (expresion -> expresion IGUALQUE expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! MENOS           [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! POR             [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! AND             [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! OR              [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! MAYQUE          [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! MENQUE          [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! IGUALQUE        [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 37 (expresion -> expresion IGUALQUE expresion .) ]
+
+
+state 83
+
+    (38) expresion -> expresion NIGUALQUE expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .)
+    COMA            reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .)
+    PARDER          reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! MENOS           [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! POR             [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! AND             [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! OR              [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! MAYQUE          [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! MENQUE          [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! IGUALQUE        [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 38 (expresion -> expresion NIGUALQUE expresion .) ]
+
+
+state 84
+
+    (39) expresion -> expresion MENORIGUAL expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for POR resolved as shift
+  ! shift/reduce conflict for DIVIDIDO resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for MAYQUE resolved as shift
+  ! shift/reduce conflict for MENQUE resolved as shift
+  ! shift/reduce conflict for IGUALQUE resolved as shift
+  ! shift/reduce conflict for NIGUALQUE resolved as shift
+  ! shift/reduce conflict for MENORIGUAL resolved as shift
+    PUNTOCOMA       reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .)
+    COMA            reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .)
+    PARDER          reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+  ! MAS             [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MENOS           [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! POR             [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! AND             [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! OR              [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MAYQUE          [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MENQUE          [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! IGUALQUE        [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! NIGUALQUE       [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MENORIGUAL      [ reduce using rule 39 (expresion -> expresion MENORIGUAL expresion .) ]
+
+
+state 85
+
+    (41) expresion -> PARIZQ expresion PARDER .
+
+    PUNTOCOMA       reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    MAS             reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    MENOS           reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    POR             reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    DIVIDIDO        reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    AND             reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    OR              reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    MAYQUE          reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    MENQUE          reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    IGUALQUE        reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    NIGUALQUE       reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    MENORIGUAL      reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    COMA            reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+    PARDER          reduce using rule 41 (expresion -> PARIZQ expresion PARDER .)
+
+
+state 86
+
+    (45) expresion -> ID PUNTO ID .
+
+    PUNTOCOMA       reduce using rule 45 (expresion -> ID PUNTO ID .)
+    MAS             reduce using rule 45 (expresion -> ID PUNTO ID .)
+    MENOS           reduce using rule 45 (expresion -> ID PUNTO ID .)
+    POR             reduce using rule 45 (expresion -> ID PUNTO ID .)
+    DIVIDIDO        reduce using rule 45 (expresion -> ID PUNTO ID .)
+    AND             reduce using rule 45 (expresion -> ID PUNTO ID .)
+    OR              reduce using rule 45 (expresion -> ID PUNTO ID .)
+    MAYQUE          reduce using rule 45 (expresion -> ID PUNTO ID .)
+    MENQUE          reduce using rule 45 (expresion -> ID PUNTO ID .)
+    IGUALQUE        reduce using rule 45 (expresion -> ID PUNTO ID .)
+    NIGUALQUE       reduce using rule 45 (expresion -> ID PUNTO ID .)
+    MENORIGUAL      reduce using rule 45 (expresion -> ID PUNTO ID .)
+    COMA            reduce using rule 45 (expresion -> ID PUNTO ID .)
+    PARDER          reduce using rule 45 (expresion -> ID PUNTO ID .)
+
+
+state 87
+
+    (46) expresion -> ID PARIZQ expresion . COMA expresion PARDER
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    COMA            shift and go to state 96
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 88
+
+    (21) imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion . PARDER PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 97
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 89
+
+    (22) declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .
+
+    CONSOLE         reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    LET             reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    ID              reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    IF              reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    WHILE           reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    FUNCTION        reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    INTERFACE       reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    RETURN          reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    BREAK           reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    $end            reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+    LLAVDER         reduce using rule 22 (declaracion_instr -> LET ID IGUAL expresion PUNTOCOMA .)
+
+
+state 90
+
+    (26) call_funcion_instr -> ID PARIZQ expresion COMA expresion . PARDER PUNTOCOMA
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 98
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 91
+
+    (24) if_instr -> IF PARIZQ expresion PARDER LLAVIZQ . instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ . instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instrucciones                  shift and go to state 99
+    instruccion                    shift and go to state 3
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 92
+
+    (28) while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ . instrucciones LLAVDER PUNTOCOMA
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instrucciones                  shift and go to state 100
+    instruccion                    shift and go to state 3
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 93
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA . ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    ID              shift and go to state 101
+
+
+state 94
+
+    (20) interface_params -> ID DOSPUNTOS . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 102
+
+state 95
+
+    (18) interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA . LLAVDER
+    (19) interface_params -> interface_params PUNTOCOMA . ID DOSPUNTOS expresion
+
+    LLAVDER         shift and go to state 104
+    ID              shift and go to state 103
+
+
+state 96
+
+    (46) expresion -> ID PARIZQ expresion COMA . expresion PARDER
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 105
+
+state 97
+
+    (21) imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 106
+
+
+state 98
+
+    (26) call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 107
+
+
+state 99
+
+    (24) if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones . LLAVDER PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones . LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    LLAVDER         shift and go to state 108
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instruccion                    shift and go to state 24
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 100
+
+    (28) while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones . LLAVDER PUNTOCOMA
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    LLAVDER         shift and go to state 109
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instruccion                    shift and go to state 24
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 101
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID . PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    PARDER          shift and go to state 110
+
+
+state 102
+
+    (20) interface_params -> ID DOSPUNTOS expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 20 (interface_params -> ID DOSPUNTOS expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 103
+
+    (19) interface_params -> interface_params PUNTOCOMA ID . DOSPUNTOS expresion
+
+    DOSPUNTOS       shift and go to state 111
+
+
+state 104
+
+    (18) interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .
+
+    CONSOLE         reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    LET             reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    ID              reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    IF              reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    WHILE           reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    FUNCTION        reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    INTERFACE       reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    RETURN          reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    BREAK           reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    $end            reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+    LLAVDER         reduce using rule 18 (interface_instr -> INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER .)
+
+
+state 105
+
+    (46) expresion -> ID PARIZQ expresion COMA expresion . PARDER
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PARDER          shift and go to state 112
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 106
+
+    (21) imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    LET             reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    ID              reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    IF              reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    WHILE           reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    RETURN          reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    BREAK           reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    $end            reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 21 (imprimir_instr -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA .)
+
+
+state 107
+
+    (26) call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    LET             reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    ID              reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    IF              reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    WHILE           reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    RETURN          reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    BREAK           reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    $end            reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 26 (call_funcion_instr -> ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA .)
+
+
+state 108
+
+    (24) if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER . PUNTOCOMA
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER . ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 113
+    ELSE            shift and go to state 114
+
+
+state 109
+
+    (28) while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 115
+
+
+state 110
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER . LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    LLAVIZQ         shift and go to state 116
+
+
+state 111
+
+    (19) interface_params -> interface_params PUNTOCOMA ID DOSPUNTOS . expresion
+    (29) expresion -> . expresion MAS expresion
+    (30) expresion -> . expresion MENOS expresion
+    (31) expresion -> . expresion POR expresion
+    (32) expresion -> . expresion DIVIDIDO expresion
+    (33) expresion -> . expresion AND expresion
+    (34) expresion -> . expresion OR expresion
+    (35) expresion -> . expresion MAYQUE expresion
+    (36) expresion -> . expresion MENQUE expresion
+    (37) expresion -> . expresion IGUALQUE expresion
+    (38) expresion -> . expresion NIGUALQUE expresion
+    (39) expresion -> . expresion MENORIGUAL expresion
+    (40) expresion -> . MENOS expresion
+    (41) expresion -> . PARIZQ expresion PARDER
+    (42) expresion -> . ENTERO
+    (43) expresion -> . CADENA
+    (44) expresion -> . ID
+    (45) expresion -> . ID PUNTO ID
+    (46) expresion -> . ID PARIZQ expresion COMA expresion PARDER
+
+    MENOS           shift and go to state 35
+    PARIZQ          shift and go to state 36
+    ENTERO          shift and go to state 37
+    CADENA          shift and go to state 38
+    ID              shift and go to state 39
+
+    expresion                      shift and go to state 117
+
+state 112
+
+    (46) expresion -> ID PARIZQ expresion COMA expresion PARDER .
+
+    PUNTOCOMA       reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    MAS             reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    MENOS           reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    POR             reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    DIVIDIDO        reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    AND             reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    OR              reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    MAYQUE          reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    MENQUE          reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    IGUALQUE        reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    NIGUALQUE       reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    MENORIGUAL      reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    COMA            reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+    PARDER          reduce using rule 46 (expresion -> ID PARIZQ expresion COMA expresion PARDER .)
+
+
+state 113
+
+    (24) if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LET             reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    ID              reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    IF              reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    WHILE           reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    RETURN          reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    BREAK           reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    $end            reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 24 (if_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+
+
+state 114
+
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE . LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+
+    LLAVIZQ         shift and go to state 118
+
+
+state 115
+
+    (28) while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LET             reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    ID              reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    IF              reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    WHILE           reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    RETURN          reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    BREAK           reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    $end            reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 28 (while_instr -> WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+
+
+state 116
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ . instrucciones LLAVDER PUNTOCOMA
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instrucciones                  shift and go to state 119
+    instruccion                    shift and go to state 3
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 117
+
+    (19) interface_params -> interface_params PUNTOCOMA ID DOSPUNTOS expresion .
+    (29) expresion -> expresion . MAS expresion
+    (30) expresion -> expresion . MENOS expresion
+    (31) expresion -> expresion . POR expresion
+    (32) expresion -> expresion . DIVIDIDO expresion
+    (33) expresion -> expresion . AND expresion
+    (34) expresion -> expresion . OR expresion
+    (35) expresion -> expresion . MAYQUE expresion
+    (36) expresion -> expresion . MENQUE expresion
+    (37) expresion -> expresion . IGUALQUE expresion
+    (38) expresion -> expresion . NIGUALQUE expresion
+    (39) expresion -> expresion . MENORIGUAL expresion
+
+    PUNTOCOMA       reduce using rule 19 (interface_params -> interface_params PUNTOCOMA ID DOSPUNTOS expresion .)
+    MAS             shift and go to state 50
+    MENOS           shift and go to state 51
+    POR             shift and go to state 52
+    DIVIDIDO        shift and go to state 53
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+    MAYQUE          shift and go to state 56
+    MENQUE          shift and go to state 57
+    IGUALQUE        shift and go to state 58
+    NIGUALQUE       shift and go to state 59
+    MENORIGUAL      shift and go to state 60
+
+
+state 118
+
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ . instrucciones LLAVDER PUNTOCOMA
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instrucciones                  shift and go to state 120
+    instruccion                    shift and go to state 3
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 119
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones . LLAVDER PUNTOCOMA
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    LLAVDER         shift and go to state 121
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instruccion                    shift and go to state 24
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 120
+
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones . LLAVDER PUNTOCOMA
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . imprimir_instr
+    (5) instruccion -> . declaracion_instr
+    (6) instruccion -> . asignacion_instr
+    (7) instruccion -> . if_instr
+    (8) instruccion -> . if_else_instr
+    (9) instruccion -> . while_instr
+    (10) instruccion -> . funcion_instr
+    (11) instruccion -> . call_funcion_instr
+    (12) instruccion -> . interface_instr
+    (13) instruccion -> . return_instr
+    (14) instruccion -> . break_instr
+    (21) imprimir_instr -> . CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+    (22) declaracion_instr -> . LET ID IGUAL expresion PUNTOCOMA
+    (23) asignacion_instr -> . ID IGUAL expresion PUNTOCOMA
+    (24) if_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (27) if_else_instr -> . IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (28) while_instr -> . WHILE PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (25) funcion_instr -> . FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA
+    (26) call_funcion_instr -> . ID PARIZQ expresion COMA expresion PARDER PUNTOCOMA
+    (18) interface_instr -> . INTERFACE ID LLAVIZQ interface_params PUNTOCOMA LLAVDER
+    (16) return_instr -> . RETURN expresion PUNTOCOMA
+    (17) return_instr -> . RETURN PUNTOCOMA
+    (15) break_instr -> . BREAK PUNTOCOMA
+
+    LLAVDER         shift and go to state 122
+    CONSOLE         shift and go to state 15
+    LET             shift and go to state 16
+    ID              shift and go to state 17
+    IF              shift and go to state 18
+    WHILE           shift and go to state 19
+    FUNCTION        shift and go to state 20
+    INTERFACE       shift and go to state 21
+    RETURN          shift and go to state 22
+    BREAK           shift and go to state 23
+
+    instruccion                    shift and go to state 24
+    imprimir_instr                 shift and go to state 4
+    declaracion_instr              shift and go to state 5
+    asignacion_instr               shift and go to state 6
+    if_instr                       shift and go to state 7
+    if_else_instr                  shift and go to state 8
+    while_instr                    shift and go to state 9
+    funcion_instr                  shift and go to state 10
+    call_funcion_instr             shift and go to state 11
+    interface_instr                shift and go to state 12
+    return_instr                   shift and go to state 13
+    break_instr                    shift and go to state 14
+
+state 121
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 123
+
+
+state 122
+
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 124
+
+
+state 123
+
+    (25) funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LET             reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    ID              reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    IF              reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    WHILE           reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    RETURN          reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    BREAK           reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    $end            reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 25 (funcion_instr -> FUNCTION ID PARIZQ ID COMA ID PARDER LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+
+
+state 124
+
+    (27) if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .
+
+    CONSOLE         reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LET             reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    ID              reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    IF              reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    WHILE           reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    FUNCTION        reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    INTERFACE       reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    RETURN          reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    BREAK           reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    $end            reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+    LLAVDER         reduce using rule 27 (if_else_instr -> IF PARIZQ expresion PARDER LLAVIZQ instrucciones LLAVDER ELSE LLAVIZQ instrucciones LLAVDER PUNTOCOMA .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for MAS in state 78 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 78 resolved as shift
+WARNING: shift/reduce conflict for POR in state 78 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 78 resolved as shift
+WARNING: shift/reduce conflict for AND in state 78 resolved as shift
+WARNING: shift/reduce conflict for OR in state 78 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 78 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 78 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 78 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 78 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 78 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 79 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 79 resolved as shift
+WARNING: shift/reduce conflict for POR in state 79 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 79 resolved as shift
+WARNING: shift/reduce conflict for AND in state 79 resolved as shift
+WARNING: shift/reduce conflict for OR in state 79 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 79 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 79 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 79 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 79 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 79 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 80 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 80 resolved as shift
+WARNING: shift/reduce conflict for POR in state 80 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 80 resolved as shift
+WARNING: shift/reduce conflict for AND in state 80 resolved as shift
+WARNING: shift/reduce conflict for OR in state 80 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 80 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 80 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 80 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 80 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 80 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 81 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 81 resolved as shift
+WARNING: shift/reduce conflict for POR in state 81 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 81 resolved as shift
+WARNING: shift/reduce conflict for AND in state 81 resolved as shift
+WARNING: shift/reduce conflict for OR in state 81 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 81 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 81 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 81 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 81 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 81 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 82 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 82 resolved as shift
+WARNING: shift/reduce conflict for POR in state 82 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 82 resolved as shift
+WARNING: shift/reduce conflict for AND in state 82 resolved as shift
+WARNING: shift/reduce conflict for OR in state 82 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 82 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 82 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 82 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 82 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 82 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 83 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 83 resolved as shift
+WARNING: shift/reduce conflict for POR in state 83 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 83 resolved as shift
+WARNING: shift/reduce conflict for AND in state 83 resolved as shift
+WARNING: shift/reduce conflict for OR in state 83 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 83 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 83 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 83 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 83 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 83 resolved as shift
+WARNING: shift/reduce conflict for MAS in state 84 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 84 resolved as shift
+WARNING: shift/reduce conflict for POR in state 84 resolved as shift
+WARNING: shift/reduce conflict for DIVIDIDO in state 84 resolved as shift
+WARNING: shift/reduce conflict for AND in state 84 resolved as shift
+WARNING: shift/reduce conflict for OR in state 84 resolved as shift
+WARNING: shift/reduce conflict for MAYQUE in state 84 resolved as shift
+WARNING: shift/reduce conflict for MENQUE in state 84 resolved as shift
+WARNING: shift/reduce conflict for IGUALQUE in state 84 resolved as shift
+WARNING: shift/reduce conflict for NIGUALQUE in state 84 resolved as shift
+WARNING: shift/reduce conflict for MENORIGUAL in state 84 resolved as shift
