@@ -18,17 +18,17 @@ pip install PLY
 
 | Clase | Tema Visto         | Acceso Directo                                                               |
 |-------|--------------------|------------------------------------------------------------------------------|
-| 29/01 | Introduccion a PLY | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_2) |
-| 05/02 | Construccion AST | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_3) |
-| 19/02 | Tabla de Simbolos | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_4) |
-| 26/02 | Uso de Entorno | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_5) |
-| 05/03 | Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_Extra) |
-| 11/03 | Interfaces | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_6) |
-| 18/03 | Return en Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_7) |
-| 01/04 | RISC-V | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_8) |
-| 07/04 | Traduccion a RISC-V 1 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_9) |
-| 15/04 | Traduccion a RISC-V 2 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_Extra_2) |
-| 22/04 | Traduccion a RISC-V 3 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/Clase_10_11) |
+| 29/01 | Introduccion a PLY | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_2) |
+| 05/02 | Construccion AST | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_3) |
+| 19/02 | Tabla de Simbolos | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_4) |
+| 26/02 | Uso de Entorno | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_5) |
+| 05/03 | Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_Extra) |
+| 11/03 | Interfaces | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_6) |
+| 18/03 | Return en Funciones | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_7) |
+| 01/04 | RISC-V | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_8) |
+| 07/04 | Traduccion a RISC-V 1 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_9) |
+| 15/04 | Traduccion a RISC-V 2 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_Extra_2) |
+| 22/04 | Traduccion a RISC-V 3 | [Ir a Ejemplo](https://github.com/Henry2311/OCL2_Ejemplos/tree/main/1S2024/Clase_10_11) |
 
 ## Documentación
 
