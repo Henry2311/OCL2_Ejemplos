@@ -1,0 +1,11 @@
+
+
+function suma(a, b){ // a -> a1 b -> a2
+    let c = a + b; 
+    return c; // C -> a0 
+}
+
+
+suma:
+    add a0, a1, a2
+    ret
