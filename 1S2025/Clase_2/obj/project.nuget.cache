@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9JpYRHRhA0U=",
+  "dgSpecHash": "o4dMKTma61k=",
   "success": true,
   "projectFilePath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/hmendoza/.nuget/packages/antlr4.runtime.standard/4.13.1/antlr4.runtime.standard.4.13.1.nupkg.sha512"
+  ],
   "logs": []
 }

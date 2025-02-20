@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj": {}
+    "/Users/hmendoza/Documents/GX/usac/OLC2_1S2025/clase-4/api/api.csproj": {}
   },
   "projects": {
-    "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj": {
+    "/Users/hmendoza/Documents/GX/usac/OLC2_1S2025/clase-4/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj",
-        "projectName": "Clase_2",
-        "projectPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj",
+        "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OLC2_1S2025/clase-4/api/api.csproj",
+        "projectName": "api",
+        "projectPath": "/Users/hmendoza/Documents/GX/usac/OLC2_1S2025/clase-4/api/api.csproj",
         "packagesPath": "/Users/hmendoza/.nuget/packages/",
-        "outputPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/obj/",
+        "outputPath": "/Users/hmendoza/Documents/GX/usac/OLC2_1S2025/clase-4/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hmendoza/.nuget/NuGet/NuGet.Config"
@@ -47,6 +47,10 @@
             "Antlr4.Runtime.Standard": {
               "target": "Package",
               "version": "[4.13.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             }
           },
           "imports": [
@@ -61,6 +65,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

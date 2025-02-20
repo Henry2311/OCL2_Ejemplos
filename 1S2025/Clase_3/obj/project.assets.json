@@ -14,6 +14,38 @@
             "related": ".xml"
           }
         }
+      },
+      "Microsoft.AspNetCore.OpenApi/9.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.17"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.OpenApi/1.6.17": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     }
   },
@@ -32,11 +64,43 @@
         "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
         "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
       ]
+    },
+    "Microsoft.AspNetCore.OpenApi/9.0.1": {
+      "sha512": "xRJe8UrLnOGs6hOBrT/4r74q97626H0mABb/DV0smlReIx6uQCENAe+TUqF6hD3NtT4sB+qrvWhAej6kxPxgew==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
+        "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
+        "microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
+    "Microsoft.OpenApi/1.6.17": {
+      "sha512": "Le+kehlmrlQfuDFUt1zZ2dVwrhFQtKREdKBo+rexOwaCoYP0/qpgT9tLxCsZjsgR5Itk1UKPcbgO+FyaNid/bA==",
+      "type": "package",
+      "path": "microsoft.openapi/1.6.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.1.6.17.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Antlr4.Runtime.Standard >= 4.13.1"
+      "Antlr4.Runtime.Standard >= 4.13.1",
+      "Microsoft.AspNetCore.OpenApi >= 9.0.1"
     ]
   },
   "packageFolders": {
@@ -45,11 +109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj",
-      "projectName": "Clase_2",
-      "projectPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/Clase_2.csproj",
+      "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_3/Clase_3.csproj",
+      "projectName": "Clase_3",
+      "projectPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_3/Clase_3.csproj",
       "packagesPath": "/Users/hmendoza/.nuget/packages/",
-      "outputPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_2/obj/",
+      "outputPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hmendoza/.nuget/NuGet/NuGet.Config"
@@ -85,6 +149,10 @@
           "Antlr4.Runtime.Standard": {
             "target": "Package",
             "version": "[4.13.1, )"
+          },
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[9.0.1, )"
           }
         },
         "imports": [
@@ -99,6 +167,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
