@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "SglYBpxkQTc=",
+  "success": true,
+  "projectFilePath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_6/api.csproj",
+  "expectedPackageFiles": [
+    "/Users/hmendoza/.nuget/packages/antlr4.runtime.standard/4.13.1/antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "/Users/hmendoza/.nuget/packages/microsoft.aspnetcore.openapi/9.0.1/microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "/Users/hmendoza/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
