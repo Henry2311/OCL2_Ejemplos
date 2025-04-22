@@ -109,11 +109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_6/api.csproj",
+      "projectUniqueName": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_7/api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_6/api.csproj",
+      "projectPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_7/api.csproj",
       "packagesPath": "/Users/hmendoza/.nuget/packages/",
-      "outputPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_6/obj/",
+      "outputPath": "/Users/hmendoza/Documents/GX/usac/OCL2_Ejemplos/1S2025/Clase_7/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hmendoza/.nuget/NuGet/NuGet.Config"

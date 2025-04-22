@@ -25,9 +25,17 @@ public class Environment
     private Dictionary<string,  (List<string> parameters, LanguageParser.BlockContext body)> functions = new();
     public Environment Parent { get; set; }
 
+    private int temporal;
+    private int msg;
+    private int label;
+
     public Environment(Environment parent = null)
     {
         Parent = parent;
+        temporal = -1;
+        msg = -1;
+        label = -1;
+
     }
 
     public Symbol GetVariable(string id)
@@ -85,4 +93,36 @@ public class Environment
             return null;
         }
     }
+    public int generateTemporal(){
+        temporal += 1;
+
+        if(temporal == 7){
+            temporal =  0;
+        }
+
+        return temporal;
+    }
+
+    public int lastTemporal(){
+        return temporal;
+    }
+
+    public int generateLabel(){
+        label += 1;
+        return label;
+    }
+
+    public int lastLabel(){
+        return label;
+    }
+    public int generateMsg(){
+        msg += 1;
+        return msg;
+    }
+
+    public int lastMsg(){
+        return msg;
+    }
+
+
 }
